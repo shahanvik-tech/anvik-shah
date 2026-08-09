@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anvik Shah — Finance &amp; Economics, UT Dallas</title>
+<meta name="description" content="Anvik Shah — Finance and Economics senior at UT Dallas. Goldman Sachs FICC &amp; Equities. Sell-side M&amp;A, equity research, and venture diligence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F1E2E;
+  --slate:#33475C;
+  --paper:#F6F8FA;
+  --card:#FFFFFF;
+  --rule:#D9E0E8;
+  --brass:#A5854A;
+  --petrol:#1F6F8B;
+  --mute:#6B7C8D;
+
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --data:'IBM Plex Mono',ui-monospace,monospace;
+
+  --wrap:1120px;
+  --ease:cubic-bezier(.22,.68,.32,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+svg,img{max-width:100%}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+
+/* ---------- eyebrow / labels ---------- */
+.eyebrow{
+  font-family:var(--data);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:500;
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  background:var(--ink);
+  color:#EAF0F5;
+  padding:64px 0 0;
+  position:relative;
+  overflow:hidden;
+}
+.masthead::after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 64px);
+  pointer-events:none;
+}
+.masthead .wrap{position:relative;z-index:1}
+.mast-eyebrow{color:#8FA3B5;margin-bottom:22px}
+.name{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(42px,7.2vw,78px);
+  line-height:.96;
+  letter-spacing:-.028em;
+  margin:0 0 20px;
+}
+.name .surname{color:var(--brass)}
+.honors{
+  list-style:none;margin:0 0 36px;padding:0;
+  display:flex;flex-wrap:wrap;gap:10px 26px;
+  max-width:64ch;
+}
+.honors li{
+  font-family:var(--display);
+  font-weight:500;font-size:15px;letter-spacing:-.005em;
+  color:#D3DFE9;
+  border-left:2px solid var(--brass);
+  padding-left:11px;line-height:1.3;
+}
+.exchange{
+  font-family:var(--data);
+  font-size:11px;letter-spacing:.11em;text-transform:uppercase;
+  color:#7E93A6;margin:0 0 30px;
+}
+
+.statline{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.14);
+  margin-top:8px;
+}
+.stat{
+  padding:20px 24px 22px;
+  border-left:1px solid rgba(255,255,255,.1);
+  min-width:0;
+}
+.stat:first-child{border-left:none;padding-left:0}
+.stat-v{
+  font-family:var(--data);
+  font-size:19px;font-weight:600;
+  color:#fff;display:block;letter-spacing:-.01em;
+}
+.stat-k{
+  font-family:var(--data);
+  font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:#7E93A6;margin-top:5px;display:block;
+}
+
+.actions{display:flex;flex-wrap:wrap;gap:12px;padding:30px 0 42px}
+.btn{
+  font-family:var(--data);
+  font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:500;
+  padding:13px 22px;
+  border:1px solid rgba(255,255,255,.28);
+  background:transparent;color:#EAF0F5;
+  text-decoration:none;cursor:pointer;
+  transition:background .28s var(--ease),border-color .28s var(--ease),color .28s var(--ease),transform .28s var(--ease);
+  display:inline-flex;align-items:center;gap:9px;
+}
+.btn:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
+.btn-primary{background:var(--brass);border-color:var(--brass);color:#14202C;font-weight:600}
+.btn-primary:hover{background:#B8974F;border-color:#B8974F;color:#14202C}
+
+/* ---------- nav ---------- */
+.subnav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(246,248,250,.93);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.subnav-inner{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.subnav-inner::-webkit-scrollbar{display:none}
+.subnav-inner a:first-child{padding-left:0}
+.subnav a{
+  font-family:var(--data);
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  padding:17px 16px;text-decoration:none;color:var(--mute);
+  white-space:nowrap;border-bottom:2px solid transparent;
+  transition:color .22s var(--ease),border-color .22s var(--ease);
+}
+.subnav a:hover{color:var(--ink)}
+.subnav a.on{color:var(--ink);border-bottom-color:var(--brass)}
+
+/* ---------- sections ---------- */
+.sec{padding:76px 0 0}
+.sec-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:14px;margin-bottom:34px;
+}
+.sec-title{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(24px,3.4vw,33px);letter-spacing:-.02em;
+  margin:0;
+}
+.sec-note{font-size:14.5px;color:var(--mute);max-width:42ch;margin:0}
+
+/* ---------- experience rows ---------- */
+.row{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-left:3px solid transparent;
+  margin-bottom:14px;
+  transition:border-left-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.row:hover{border-left-color:var(--brass);box-shadow:0 2px 18px rgba(15,30,46,.06)}
+.row.open{border-left-color:var(--brass)}
+.row:last-child{margin-bottom:0}
+.row-btn{
+  width:100%;background:none;border:none;text-align:left;
+  padding:22px 24px;cursor:pointer;font:inherit;color:inherit;
+  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
+}
+.row-btn:focus-visible{outline:2px solid var(--petrol);outline-offset:-2px}
+.row-org{
+  font-family:var(--display);font-weight:600;font-size:19px;
+  letter-spacing:-.012em;margin:0 0 5px;
+}
+.row-role{font-size:15px;color:var(--slate);margin:0}
+.row-meta{
+  font-family:var(--data);font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--mute);margin-top:9px;
+  display:flex;flex-wrap:wrap;gap:14px;
+}
+.tag{
+  font-family:var(--data);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--rule);padding:4px 9px;color:var(--slate);
+}
+.tag-live{border-color:var(--brass);color:var(--brass)}
+.chev{
+  width:26px;height:26px;flex:none;color:var(--mute);
+  transition:transform .34s var(--ease),color .34s var(--ease);
+}
+.row.open .chev{transform:rotate(180deg);color:var(--brass)}
+
+.detail{max-height:0;overflow:hidden;transition:max-height .44s var(--ease)}
+.detail-in{margin:0 24px;padding:0 0 26px;border-top:1px solid var(--rule)}
+.detail ul{margin:18px 0 0;padding-left:20px}
+.detail li{margin-bottom:11px;color:var(--slate)}
+.detail li::marker{color:var(--brass)}
+.detail-foot{
+  font-family:var(--data);font-size:11px;letter-spacing:.08em;
+  color:var(--mute);text-transform:uppercase;margin-top:18px;
+}
+
+/* ---------- capability meters ---------- */
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.cap-card{background:var(--card);border:1px solid var(--rule);padding:24px}
+.cap-card h3{
+  font-family:var(--display);font-weight:600;font-size:13px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--slate);
+  margin:0 0 20px;
+}
+.skill{margin-bottom:17px}
+.skill:last-child{margin-bottom:0}
+.skill-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.skill-name{font-size:15px}
+.skill-lvl{
+  font-family:var(--data);font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--mute);
+}
+.meter{display:flex;gap:4px}
+.seg{height:5px;flex:1;background:var(--rule);transition:background .6s var(--ease)}
+.on-1 .seg:nth-child(-n+1),
+.on-2 .seg:nth-child(-n+2),
+.on-3 .seg:nth-child(-n+3),
+.on-4 .seg:nth-child(-n+4){background:var(--brass)}
+
+/* ---------- coverage ---------- */
+.cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.cov{
+  background:var(--card);border:1px solid var(--rule);
+  padding:24px;border-top:2px solid var(--petrol);
+  display:flex;flex-direction:column;height:100%;
+}
+.cov-head{min-height:70px}
+.cov-sector{
+  font-family:var(--display);font-weight:700;font-size:21px;
+  margin:0 0 6px;letter-spacing:-.022em;line-height:1.15;
+}
+.cov-where{
+  font-family:var(--data);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--petrol);margin:0 0 18px;
+}
+.cov-thesis{
+  margin:0;font-size:16px;line-height:1.68;color:var(--slate);
+  font-family:var(--body);flex:1 1 auto;
+}
+.cov-risk{margin-top:auto;border-top:1px solid var(--rule);flex:0 0 auto}
+.cov-risk-k{
+  display:block;font-family:var(--data);font-size:9.5px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--mute);
+  margin:16px 0 7px;
+}
+.cov-risk p{
+  margin:0;font-size:14.5px;line-height:1.6;color:var(--mute);
+  font-family:var(--body);font-style:italic;
+  min-height:calc(14.5px * 1.6 * 4);
+}
+
+/* ---------- leadership ---------- */
+.lead-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.lead{background:var(--card);border:1px solid var(--rule);padding:24px;display:flex;flex-direction:column;height:100%}
+.lead-head{
+  display:flex;flex-direction:column;gap:6px;
+  min-height:82px;
+  padding-bottom:14px;margin-bottom:16px;
+  border-bottom:1px solid var(--rule);
+}
+.lead h3{font-family:var(--display);font-weight:600;font-size:17px;margin:0;line-height:1.25}
+.lead-role{
+  font-family:var(--data);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--slate);margin:0;line-height:1.4;
+}
+.lead-dates{
+  font-family:var(--data);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--brass);margin:0;line-height:1.4;
+}
+.lead p{margin:0;font-size:15px;color:var(--slate);line-height:1.62}
+
+/* ---------- madrid ---------- */
+.madrid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:14px}
+.mad-card{background:var(--card);border:1px solid var(--rule);padding:24px}
+.mad-card h3{
+  font-family:var(--data);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--petrol);margin:0 0 20px;font-weight:600;
+}
+.courses{list-style:none;margin:0;padding:0}
+.courses li{
+  font-family:var(--display);font-weight:500;font-size:16px;
+  padding:12px 0;border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+}
+.courses li:first-child{padding-top:0}
+.courses li:last-child{border-bottom:none;padding-bottom:0}
+.courses .cr{font-family:var(--data);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);white-space:nowrap}
+.takeaways{list-style:none;margin:0;padding:0}
+.takeaways li{
+  padding:0 0 18px 18px;border-left:2px solid var(--brass);
+  margin-bottom:18px;font-size:15.5px;line-height:1.62;color:var(--slate);
+}
+.takeaways li:last-child{margin-bottom:0;padding-bottom:0}
+.takeaways b{font-family:var(--display);font-weight:600;color:var(--ink);display:block;margin-bottom:3px;font-size:15px}
+
+/* ---------- interests ---------- */
+.int-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.int{
+  background:var(--card);border:1px solid var(--rule);
+  padding:22px 16px;text-align:left;min-width:0;
+  transition:border-color .3s var(--ease),transform .3s var(--ease);
+}
+.int:hover{border-color:var(--brass);transform:translateY(-2px)}
+.int svg{width:32px;height:32px;color:var(--petrol);margin-bottom:14px;display:block}
+.int:hover svg{color:var(--brass)}
+.int h3{font-family:var(--display);font-weight:600;font-size:15px;margin:0 0 5px;letter-spacing:-.015em}
+.int p{margin:0;font-size:13px;color:var(--mute);line-height:1.5}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:#EAF0F5;margin-top:80px;padding:70px 0}
+.contact .sec-title{color:#fff}
+.contact .sec-head{border-bottom-color:rgba(255,255,255,.14)}
+.contact .sec-note{color:#93A6B7}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:52px}
+.direct dt{
+  font-family:var(--data);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:#7E93A6;margin-bottom:5px;
+}
+.direct dd{margin:0 0 20px;font-size:16px}
+.direct a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:2px}
+.direct a:hover{border-bottom-color:var(--brass);color:var(--brass)}
+
+form{display:grid;gap:14px}
+.field label{
+  display:block;font-family:var(--data);font-size:10.5px;
+  letter-spacing:.13em;text-transform:uppercase;color:#7E93A6;margin-bottom:7px;
+}
+.field input,.field textarea{
+  width:100%;padding:12px 14px;font:inherit;font-size:15px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;border-radius:0;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--brass);background:rgba(255,255,255,.09)}
+.field textarea{min-height:110px;resize:vertical}
+.form-msg{font-family:var(--data);font-size:12px;margin:0;min-height:18px}
+.form-msg.ok{color:#7FC8A9}
+.form-msg.err{color:#E39B8F}
+
+footer{padding:26px 0;font-family:var(--data);font-size:11px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase}
+
+/* ---------- motion ---------- */
+.rise{opacity:0;transform:translateY(16px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
+.rise.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .int-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:860px){
+  .madrid{grid-template-columns:1fr}
+  .cov-grid,.lead-grid{grid-template-columns:1fr}
+  .cov-risk p{min-height:0}
+  .cov-head,.lead-head{min-height:0}
+  .contact-grid{grid-template-columns:1fr;gap:38px}
+  .statline{grid-template-columns:repeat(2,1fr)}
+  .stat{padding:16px 16px 18px}
+  .stat:nth-child(odd){border-left:none;padding-left:0}
+  .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.1)}
+  .int-grid{grid-template-columns:repeat(2,1fr)}
+  .honors{gap:9px 18px}
+  .honors li{font-size:14px}
+  .masthead{padding-top:44px}
+  .row-btn{padding:19px 18px}
+  .detail-in{margin:0 18px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .masthead{padding-top:36px}
+  .name{font-size:40px;margin-bottom:16px}
+  .honors{gap:8px 16px;margin-bottom:26px}
+  .honors li{font-size:13.5px;padding-left:9px}
+  .actions{gap:9px;padding:24px 0 34px}
+  .btn{padding:12px 16px;font-size:11px;flex:1 1 auto;justify-content:center}
+  .stat-v{font-size:17px}
+  .stat{padding:14px 12px 16px}
+  .subnav a{padding:14px 13px;font-size:10.5px}
+  .sec{padding:52px 0 0}
+  .sec-head{margin-bottom:24px}
+  .cap-card,.cov,.lead,.mad-card{padding:20px}
+  .row-org{font-size:17px}
+  .cov-thesis{font-size:15.5px}
+  .int-grid{gap:8px}
+  .int{padding:18px 14px}
+  .int svg{width:28px;height:28px;margin-bottom:11px}
+  .int h3{font-size:14px}
+  .int p{font-size:12.5px}
+  .contact{padding:52px 0;margin-top:56px}
+  .courses li{font-size:15px}
+  .takeaways li{font-size:15px;padding-left:14px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .rise{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow mast-eyebrow">Finance &amp; Economics · The University of Texas at Dallas · Class of 2027</p>
+    <h1 class="name">Anvik <span class="surname">Shah</span></h1>
+    <ul class="honors">
+      <li>UTIMCO Scholar</li>
+      <li>Academic Excellence Scholarship</li>
+      <li>Jindal Undergraduate Research Scholar</li>
+      <li>Collegium V Honors</li>
+      <li>Professional Program in Finance</li>
+    </ul>
+
+    <div class="statline">
+      <div class="stat"><span class="stat-v">3.80</span><span class="stat-k">GPA / 4.00</span></div>
+      <div class="stat"><span class="stat-v">May 2027</span><span class="stat-k">Graduation</span></div>
+      <div class="stat"><span class="stat-v">4</span><span class="stat-k">Finance internships</span></div>
+      <div class="stat"><span class="stat-v">Dallas, TX</span><span class="stat-k">Based in</span></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing" target="_blank" rel="noopener" data-resume>Download resume (PDF)</a>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn" href="https://www.linkedin.com/in/anvik-shah" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Sections">
+  <div class="wrap subnav-inner">
+    <a href="#experience">Experience</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#madrid">Madrid</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#interests">Interests</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Experience</h2>
+      <p class="sec-note">Select a role to see the full scope of work.</p>
+    </div>
+
+    <article class="row rise">
+      <button class="row-btn" aria-expanded="false">
+        <div>
+          <h3 class="row-org">Goldman Sachs</h3>
+          <p class="row-role">Rotational Summer Analyst — FICC &amp; Equities</p>
+          <div class="row-meta">
+            <span>Jun 2026 – Aug 2026</span><span>Dallas, TX</span>
+            <span class="tag">Rotations: One Delta · Prime Services</span>
+          </div>
+        </div>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="detail"><div class="detail-in"><ul>
+        <li>Built competitive landscape models, liquidity pool projections, and fee structure analysis supporting corporate strategy and structuring workstreams for the Texas Stock Exchange.</li>
+        <li>Analyzed market microstructure, financing spreads, and short-interest rate data across the One Delta and Prime Services desks to support risk monitoring and trade execution for 30+ hedge fund clients.</li>
+        <li>Synthesized daily macroeconomic catalysts and order-flow trends into market commentary and two weekly trade ideas distributed to a coverage network of 40+ institutional asset management clients.</li>
+      </ul>
+      <p class="detail-foot">Skills applied — Market structure · Liquidity analysis · Client coverage · Strategic modeling</p>
+      </div></div>
+    </article>
+
+    <article class="row rise">
+      <button class="row-btn" aria-expanded="false">
+        <div>
+          <h3 class="row-org">Cantor Fitzgerald &amp; Co.</h3>
+          <p class="row-role">Investment Analyst — Global Equity</p>
+          <div class="row-meta"><span>May 2025 – Aug 2025</span><span>Dallas, TX</span><span class="tag">Equity research</span></div>
+        </div>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="detail"><div class="detail-in"><ul>
+        <li>Analyzed cross-border valuation data using comparable companies, precedent transactions, and segment-level performance metrics across 15+ private and public consumer firms, supporting strategic decision-making and pitch development.</li>
+        <li>Quantified supply chain vulnerabilities and regulatory risk for 10+ EMEA consumer firms and integrated ESG risk premiums into DCF models, informing target prices within a $500M+ institutional portfolio strategy.</li>
+        <li>Covered a universe of 15+ public equities in the $200B+ global consumer durables sector; produced daily market briefs, sector thematic notes, and earnings-season previews for institutional clients.</li>
+      </ul>
+      <p class="detail-foot">Skills applied — Comps &amp; precedents · DCF · Sector coverage · Client-facing research</p>
+      </div></div>
+    </article>
+
+    <article class="row rise">
+      <button class="row-btn" aria-expanded="false">
+        <div>
+          <h3 class="row-org">Sellside Consulting Group, LLC</h3>
+          <p class="row-role">M&amp;A Business Development Consultant Intern</p>
+          <div class="row-meta"><span>Jun 2024 – Aug 2024</span><span>Dallas, TX</span><span class="tag">Sell-side M&amp;A</span></div>
+        </div>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="detail"><div class="detail-in"><ul>
+        <li>Deconstructed historical financial statements, calculated normalized EBITDA, and analyzed working capital hooks to support senior bankers on preliminary asset breakdowns and target valuations.</li>
+        <li>Conducted market sizing and competitive benchmarking for mid-market targets; built a pipeline of 50+ qualified prospective mandates.</li>
+        <li>Drafted pitch books for sell-side advisory engagements, including positioning materials and preliminary valuation ranges.</li>
+      </ul>
+      <p class="detail-foot">Skills applied — Quality of earnings · Working capital analysis · Pitch book construction · Origination</p>
+      </div></div>
+    </article>
+
+    <article class="row rise">
+      <button class="row-btn" aria-expanded="false">
+        <div>
+          <h3 class="row-org">Blossom Street Ventures</h3>
+          <p class="row-role">Spring Research Analyst</p>
+          <div class="row-meta"><span>Jan 2024 – May 2024</span><span>Austin, TX</span><span class="tag">Venture</span></div>
+        </div>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="detail"><div class="detail-in"><ul>
+        <li>Built 15+ integrated three-statement forecasting models and capitalization tables; ran sensitivity analyses on growth projections supporting seed and Series A rounds exceeding $1M.</li>
+        <li>Evaluated SaaS unit economics (ARR, LTV/CAC, net revenue retention) for early-stage targets and conducted cohort analyses identifying a projected 10% cost-reduction path.</li>
+      </ul>
+      <p class="detail-foot">Skills applied — Three-statement modeling · Cap tables · Unit economics · Sensitivity analysis</p>
+      </div></div>
+    </article>
+
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="sec" id="capabilities">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Capabilities</h2>
+      <p class="sec-note">Self-assessed. Every line here is fair game in a technical interview.</p>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card rise">
+        <h3>Modeling &amp; valuation</h3>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Three-statement modeling</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">DCF &amp; sensitivity analysis</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Comps &amp; precedent transactions</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">LBO modeling</span><span class="skill-lvl">Proficient</span></div><div class="meter on-3"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">M&amp;A accretion / dilution</span><span class="skill-lvl">Proficient</span></div><div class="meter on-3"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+      </div>
+
+      <div class="cap-card rise">
+        <h3>Platforms &amp; tools</h3>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Excel</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Bloomberg Terminal — Core Certified</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Capital IQ</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">FactSet · LSEG Workspace</span><span class="skill-lvl">Proficient</span></div><div class="meter on-3"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Python</span><span class="skill-lvl">Working</span></div><div class="meter on-2"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+      </div>
+
+      <div class="cap-card rise">
+        <h3>Domain</h3>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Consumer durables</span><span class="skill-lvl">Advanced</span></div><div class="meter on-4"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Equity market structure</span><span class="skill-lvl">Proficient</span></div><div class="meter on-3"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">Sell-side M&amp;A process</span><span class="skill-lvl">Proficient</span></div><div class="meter on-3"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">SaaS / early-stage diligence</span><span class="skill-lvl">Proficient</span></div><div class="meter on-3"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+        <div class="skill"><div class="skill-top"><span class="skill-name">EMEA regulatory &amp; supply chain risk</span><span class="skill-lvl">Working</span></div><div class="meter on-2"><i class="seg"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="sec" id="coverage">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Coverage &amp; Views</h2>
+      <p class="sec-note">Where I've built a real base of knowledge, and what I currently think.</p>
+    </div>
+
+    <div class="cov-grid">
+      <div class="cov rise">
+        <div class="cov-head"><h3 class="cov-sector">Consumer Durables</h3>
+        <p class="cov-where">Cantor Fitzgerald · Mu-Rho Market Fund</p></div>
+        <p class="cov-thesis">The re-rating case for durables is usually underwritten on an existing-home-sales recovery. I think the replacement cycle rolling off the 2020–21 demand pull-forward is the larger and more predictable driver, and it arrives regardless of where mortgage rates settle. The risk sits in mix, not volume: the group has defended price better than units, so the quarter to watch is the first one where units recover and average selling prices crack.</p>
+        <div class="cov-risk">
+          <span class="cov-risk-k">What would change my mind</span>
+          <p>A genuine move down in mortgage rates pulling housing-linked volume forward faster than replacement demand can account for — right on direction, wrong on the driver.</p>
+        </div>
+      </div>
+
+      <div class="cov rise">
+        <div class="cov-head"><h3 class="cov-sector">Equity Market Structure</h3>
+        <p class="cov-where">Goldman Sachs · One Delta &amp; Prime Services</p></div>
+        <p class="cov-thesis">TXSE completed its phased rollout of all NMS symbols on July 31 with more than 50 member firms participating. Trading was always the tractable half of the problem — matching engine, connectivity, latency equalization. Listings are the real test, with ETPs late in Q3, corporate transfers in Q4, and IPOs targeted for 2027. Trading share can be bought through fee structure; a listing requires an issuer to accept a liquidity discount in exchange for something else, and that trade has to be argued rather than priced.</p>
+        <div class="cov-risk">
+          <span class="cov-risk-k">What would change my mind</span>
+          <p>A first cohort of corporate transfers larger than expected would reprice incumbent listing economics well ahead of my timeline.</p>
+        </div>
+      </div>
+
+      <div class="cov rise">
+        <div class="cov-head"><h3 class="cov-sector">Mid-Market M&amp;A</h3>
+        <p class="cov-where">Sellside Consulting Group</p></div>
+        <p class="cov-thesis">Deal flow here is gated by the bid-ask on quality, not by financing availability. Sponsors are holding assets past their intended horizon with marks that haven't been tested, owners of genuinely good businesses aren't compelled to sell, and everything else clears at a discount sellers won't accept. The unlock is structure — earnouts, rollover equity, seller notes — rather than a move in rates. On the sell-side that puts the weight on diligence quality: the processes that close are the ones where quality of earnings survives the first pass.</p>
+        <div class="cov-risk">
+          <span class="cov-risk-k">What would change my mind</span>
+          <p>Material compression in credit spreads bringing strategics back in size would close the bid-ask on price alone and make the structure argument mostly irrelevant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MADRID -->
+  <section class="sec" id="madrid">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Semester in Madrid</h2>
+      <p class="sec-note">Universidad Carlos III de Madrid · Spring 2026</p>
+    </div>
+
+    <div class="madrid">
+      <div class="mad-card rise">
+        <h3>Coursework</h3>
+        <ul class="courses">
+          <li>International Business <span class="cr">Core</span></li>
+          <li>Applied Economics <span class="cr">Core</span></li>
+          <li>Supply Chain Management <span class="cr">Elective</span></li>
+          <li>Family Business Management <span class="cr">Elective</span></li>
+        </ul>
+      </div>
+
+      <div class="mad-card rise">
+        <h3>What I took from it</h3>
+        <ul class="takeaways">
+          <li><b>Succession is the real driver of European mid-market deal flow.</b> Family Business Management was built around ownership transition rather than valuation mechanics, which is the opposite of how U.S. coursework frames M&amp;A — and it maps directly onto the SME advisory work I want to do long term.</li>
+          <li><b>Regulation is a modeling input, not a footnote.</b> Applied Economics and Supply Chain gave me the EU policy grounding behind the EMEA regulatory and supply chain risk work I'd done at Cantor, where I'd been quantifying exposures without a real feel for how the rules got written.</li>
+          <li><b>Working through ambiguity with an unfamiliar cohort.</b> Case work in mixed international teams, with different accounting conventions and different assumptions about what counts as evidence — closer to a live deal team than a U.S. classroom is.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="sec" id="leadership">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Leadership</h2>
+    </div>
+
+    <div class="lead-grid">
+      <div class="lead rise">
+        <div class="lead-head">
+          <h3>Mu-Rho Market Fund</h3>
+          <p class="lead-role">Co-founder</p>
+          <p class="lead-dates">Jun 2024 – Present</p>
+        </div>
+        <p>Co-founded an undergraduate investment fund. Drafted the investment policy statement, set risk-limit parameters, and built the sector allocation framework. Lead consumer durables coverage — analysis contributed to a 12% portfolio return.</p>
+      </div>
+      <div class="lead rise">
+        <div class="lead-head">
+          <h3>Alpha Kappa Psi</h3>
+          <p class="lead-role">Vice President</p>
+          <p class="lead-dates">Aug 2024 – Present</p>
+        </div>
+        <p>Lead 7 committees and 124 members. Secured corporate sponsorships from Red Bull, Verizon, Salesforce, and IBM, increasing chapter funding by 72% and seeding the launch of the Mu-Rho Market Fund.</p>
+      </div>
+      <div class="lead rise">
+        <div class="lead-head">
+          <h3>Big Brainers Organization</h3>
+          <p class="lead-role">Co-founder · Non-profit</p>
+          <p class="lead-dates">Apr 2021 – Dec 2022</p>
+        </div>
+        <p>Co-founded a nonprofit delivering 120+ hours of instruction in financial literacy, technology, and public speaking to students aged 5–17, reaching 200+ students with free educational resources.</p>
+      </div>
+    </div>
+  </section>
+  <!-- INTERESTS -->
+  <section class="sec" id="interests">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Outside the Desk</h2>
+      <p class="sec-note">The things I'll happily talk about for too long.</p>
+    </div>
+
+    <div class="int-grid">
+      <div class="int rise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <circle cx="24" cy="26" r="14"/><circle cx="24" cy="26" r="1.6" fill="currentColor" stroke="none"/>
+          <path d="M24 26V17M24 26l6 4"/><path d="M18 8h12M20 12l1-4M28 12l-1-4"/>
+          <path d="M24 15v-2M35 26h2M24 37v2M11 26H9"/>
+        </svg>
+        <h3>Horology</h3>
+        <p>Movement architecture and mechanical design.</p>
+      </div>
+
+      <div class="int rise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <ellipse cx="19" cy="17" rx="11" ry="12.5" transform="rotate(-34 19 17)"/>
+          <path d="M11 10c5 4 10 10 13 16M27 11c-5 4-9 10-11 16"/>
+          <path d="M26 28l10 12"/><circle cx="38" cy="42" r="3"/>
+        </svg>
+        <h3>Tennis</h3>
+        <p>Played competitively growing up.</p>
+      </div>
+
+      <div class="int rise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="24" cy="24" r="16"/>
+          <path d="M24 14l8 6-3 10h-10l-3-10z"/>
+          <path d="M24 8v6M11 20l5 3M37 20l-5 3M16 38l3-8M32 38l-3-8"/>
+        </svg>
+        <h3>Soccer</h3>
+        <p>Weekend five-a-side and transfer economics.</p>
+      </div>
+
+      <div class="int rise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 30h6l4-6h12l3-4h9a4 4 0 014 4v6H5z"/>
+          <circle cx="14" cy="32" r="4"/><circle cx="35" cy="32" r="4"/>
+          <path d="M8 18h9M12 13h9"/>
+        </svg>
+        <h3>Formula 1</h3>
+        <p>Race strategy under time pressure.</p>
+      </div>
+
+      <div class="int rise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <rect x="16" y="16" width="16" height="16" rx="2"/>
+          <path d="M21 16v-6M27 16v-6M21 38v-6M27 38v-6M16 21h-6M16 27h-6M38 21h-6M38 27h-6"/>
+        </svg>
+        <h3>Technology</h3>
+        <p>Building small market-data automation tools.</p>
+      </div>
+
+      <div class="int rise">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <circle cx="24" cy="24" r="16"/>
+          <path d="M8 24h32M24 8c4.5 4.8 6.8 10.3 6.8 16S28.5 39.2 24 40c-4.5-.8-6.8-10.3-6.8-16S19.5 12.8 24 8z"/>
+        </svg>
+        <h3>Travel</h3>
+        <p>4 continents, 16 countries.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head rise">
+      <h2 class="sec-title">Get in touch</h2>
+      <p class="sec-note">Recruiting for full-time 2027 analyst roles. Happy to talk anytime.</p>
+    </div>
+
+    <div class="contact-grid">
+      <dl class="direct rise">
+        <dt>Email</dt>
+        <dd><a href="mailto:shahanvik@gmail.com">shahanvik@gmail.com</a></dd>
+        <dt>Phone</dt>
+        <dd><a href="tel:+14694276272">469.427.6272</a></dd>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/anvik-shah" target="_blank" rel="noopener">/in/anvik-shah</a></dd>
+        <dt>Resume</dt>
+        <dd><a href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing" target="_blank" rel="noopener" data-resume>Download PDF</a></dd>
+      </dl>
+
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="cname">Your name</label>
+          <input id="cname" name="name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="cemail">Your email</label>
+          <input id="cemail" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="cmsg">Message</label>
+          <textarea id="cmsg" name="message" required></textarea>
+        </div>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" type="submit" style="justify-self:start">Send message</button>
+      </form>
+    </div>
+
+    <footer>© 2026 Anvik Shah · Dallas, TX</footer>
+  </div>
+</section>
+
+<script>
+/* =========================================================
+   RESUME LINK — change this ONE line to repoint both buttons.
+
+   Option A (recommended) — file sits next to index.html:
+       const RESUME_URL = 'Anvik_Shah_Resume.pdf';
+
+   Option B — Google Drive. Set sharing to "Anyone with the
+   link", copy the FILE_ID out of the share URL, and use:
+       const RESUME_URL = 'https://drive.google.com/file/d/FILE_ID/view';
+   ========================================================= */
+const RESUME_URL = 'https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing';
+
+document.querySelectorAll('[data-resume]').forEach(a => {
+  a.href = RESUME_URL;
+  if (/^https?:/i.test(RESUME_URL)) {          // external host
+    a.removeAttribute('download');              // cross-origin downloads are blocked anyway
+    a.target = '_blank';
+    a.rel = 'noopener';
+  }
+});
+
+/* ---- SET THIS to your Formspree endpoint, e.g.
+   'https://formspree.io/f/xabcdefg'  — see SETUP.md.
+   Leave as null and the form falls back to opening the visitor's email client. */
+const FORM_ENDPOINT = null;
+
+/* expand / collapse */
+document.querySelectorAll('.row-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const row = btn.closest('.row');
+    const panel = row.querySelector('.detail');
+    const isOpen = row.classList.contains('open');
+    document.querySelectorAll('.row.open').forEach(r => {
+      r.classList.remove('open');
+      r.querySelector('.detail').style.maxHeight = null;
+      r.querySelector('.row-btn').setAttribute('aria-expanded','false');
+    });
+    if (!isOpen) {
+      row.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 40 + 'px';
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+/* scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 55);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rise').forEach(el => io.observe(el));
+
+/* active nav */
+const links = [...document.querySelectorAll('.subnav a')];
+const navIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-15% 0px -70% 0px' });
+document.querySelectorAll('section[id]').forEach(s => navIO.observe(s));
+
+/* contact form */
+const form = document.getElementById('contactForm');
+const msg  = document.getElementById('formMsg');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const body = form.message.value.trim();
+
+  if (!name || !email || !body) {
+    msg.className = 'form-msg err';
+    msg.textContent = 'Fill in all three fields before sending.';
+    return;
+  }
+
+  if (!FORM_ENDPOINT) {
+    window.location.href =
+      'mailto:shahanvik@gmail.com?subject=' + encodeURIComponent('Website enquiry — ' + name) +
+      '&body=' + encodeURIComponent(body + '\n\n— ' + name + ' (' + email + ')');
+    msg.className = 'form-msg ok';
+    msg.textContent = 'Opening your email client.';
+    return;
+  }
+
+  msg.className = 'form-msg';
+  msg.textContent = 'Sending…';
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+    if (!res.ok) throw new Error('bad response');
+    form.reset();
+    msg.className = 'form-msg ok';
+    msg.textContent = 'Message sent. I\'ll reply within a day.';
+  } catch (err) {
+    msg.className = 'form-msg err';
+    msg.textContent = 'That didn\'t send. Email shahanvik@gmail.com directly.';
+  }
+});
+</script>
+</body>
+</html>
