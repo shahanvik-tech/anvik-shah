@@ -206,6 +206,41 @@ html[data-theme="dark"] .section--ink {
 }
 .hero__marker.is-on { opacity: 1; }
 .hero__title { position: relative; margin-bottom: clamp(12px, 1.6vw, 20px); }
+.hero__intro { display: grid; gap: 14px; max-width: 38rem; }
+.hero__line {
+  margin: 0;
+  font-size: clamp(18px, 1.35vw, 22px);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+.hero__links { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero__body { flex-wrap: wrap; align-items: flex-end; }
+.names, .done { border-top: 1px solid var(--ink); }
+.names li, .done li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.names li {
+  font-weight: 650;
+  letter-spacing: -.015em;
+  font-size: clamp(18px, 1.4vw, 22px);
+}
+.done li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  font-size: clamp(16px, 1.05vw, 18px);
+  letter-spacing: -.012em;
+}
+.done a {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.done a:hover { color: #C41E0A; border-color: #C41E0A; }
+html[data-theme="dark"] .done a:hover { color: var(--signal); border-color: var(--signal); }
 .wm {
   display: block;
   font-family: var(--f-display);
@@ -604,6 +639,109 @@ html[data-theme="dark"] .contact__phone:hover { color: var(--signal); border-col
 .footer__credits p:last-child { grid-column: 10 / 13; text-align: right; }
 .footer__credits a { text-decoration: none; border-bottom: 1px solid transparent; }
 .footer__credits a:hover { border-color: currentColor; }
+/* Project cards, same rules and type as the rest of the page. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px 20px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100%;
+  transition: background-color .25s var(--ease), color .25s var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { background: var(--ink); color: var(--paper); }
+}
+.card__top {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 11px;
+  color: var(--muted);
+}
+.card:hover .card__top { color: inherit; opacity: .72; }
+.card__foot { display: grid; gap: 12px; margin-top: 4px; }
+.card__name {
+  font-size: clamp(28px, 2.4vw, 40px);
+  line-height: .98;
+  font-weight: 800;
+  font-stretch: 70%;
+  letter-spacing: -.022em;
+}
+.card__desc { font-size: 15.5px; line-height: 1.5; max-width: 46ch; }
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 12px;
+  border-top: 1px solid currentColor;
+}
+.card__tags li {
+  padding: 3px 6px;
+  border: 1px solid currentColor;
+  font-size: 10.5px;
+  line-height: 1.2;
+}
+.card__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.card__repo {
+  font-size: 11px;
+  line-height: 1.2;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.card__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  border: 1px solid currentColor;
+  font-size: 10.5px;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.card__live::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--signal);
+}
+.card__repo:hover,
+.card__live:hover { color: var(--signal); border-color: var(--signal); }
+.card:hover .card__repo:hover,
+.card:hover .card__live:hover { color: var(--paper); border-color: var(--paper); }
+.card:hover .card__live:hover { background: var(--signal); color: var(--on-signal); border-color: var(--signal); }
+
+.writing__link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: clamp(22px, 2.6vw, 40px);
+  line-height: 1.15;
+  font-weight: 750;
+  font-stretch: 82%;
+  letter-spacing: -.02em;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  overflow-wrap: anywhere;
+}
+.writing__link:hover { color: #C41E0A; border-color: #C41E0A; }
+html[data-theme="dark"] .writing__link:hover { color: var(--signal); border-color: var(--signal); }
+.manifesto__body a { text-underline-offset: .18em; }
+.manifesto__body a:hover { color: var(--signal); }
+
 .footer__mark {
   margin-top: clamp(24px, 4vw, 48px);
   font-family: var(--f-display);
@@ -653,7 +791,7 @@ html[data-theme="dark"] .contact__phone:hover { color: var(--signal); border-col
   .manifesto__label { padding-top: 0; }
   .about__photo { max-width: 220px; }
   .manifesto__body { font-size: clamp(18px, 4.4vw, 22px); }
-  .cap-grid, .findings, .madrid, .lang-grid { grid-template-columns: 1fr; }
+  .cap-grid, .findings, .madrid, .lang-grid, .cards { grid-template-columns: 1fr; }
   .finding { border-right: 0; border-bottom: 1px solid var(--line); padding: 16px 0; }
   .finding + .finding { padding-left: 0; }
   .xp { --xp-pad: 22px; }
