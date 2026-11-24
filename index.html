@@ -1,167 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" id="top">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anvik Shah | Venture Capital, UT Dallas</title>
-<meta name="description" content="Anvik Shah, finance and economics at UT Dallas. Venture, startups, a $50K student fund, and notes on the startups changing finance.">
-<meta name="theme-color" content="#EFEBE3">
-<script>
-try { if (localStorage.getItem("as-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anvik Shah | Venture, Startups, and Fintech</title>
+  <meta name="description" content="Anvik Shah studies finance and economics at UT Dallas. Explore his early-stage venture work, side projects, and writing on fintech.">
+  <meta name="theme-color" content="#f5efe0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header class="nav" id="top">
-  <a class="nav__logo" href="#top" aria-label="Anvik Shah, back to top">
-    <span class="logo__mark" aria-hidden="true">AS</span>
-  </a>
-  <button class="nav__toggle mono" type="button" aria-expanded="false" aria-controls="nav-panel" data-label-open="Menu" data-label-close="Close">Menu</button>
-  <div class="nav__panel" id="nav-panel">
-    <nav class="nav__links" aria-label="Sections">
-      <a href="#interested">Interests</a>
-      <a href="#done">Work</a>
-      <a href="#contact">Contact</a>
-      <a href="https://substack.com/@shahanvik" target="_blank" rel="noopener noreferrer">Substack ↗</a>
-      <a href="https://www.linkedin.com/in/anvik-shah" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-    </nav>
-    <button class="theme mono" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode">Dark</button>
-    <a class="btn btn--solid nav__cta" data-resume href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing">Resume <span aria-hidden="true">↗</span></a>
-  </div>
-</header>
-
-<main id="main">
-
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__ruler" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      <i class="hero__marker"></i>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="button menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav" hidden>
+        <span aria-hidden="true"></span>
+      </button>
+      <a class="wordmark" href="#top" aria-label="Anvik Shah, home">
+        <span class="monogram" aria-hidden="true">AS</span>
+        <span class="wordmark-name">Anvik Shah</span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="button" href="#work">Work</a>
+        <a class="button" href="#interests">Interests</a>
+        <a class="button" href="#projects">Projects</a>
+        <a class="button" href="#writing">Writing</a>
+        <a class="button" href="#contact">Contact</a>
+      </nav>
+      <a class="button primary header-resume" href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing">Resume</a>
     </div>
-    <h1 class="hero__title" id="hero-title">
-      <span class="sr-only">Anvik Shah</span>
-      <span class="wm" aria-hidden="true"><span class="wm__line">Anvik</span><span class="wm__sp"> </span><span class="wm__line">Shah</span></span>
-    </h1>
-    <div class="hero__body">
-      <div class="hero__intro">
-        <p class="hero__line">Finance and economics at UT Dallas, Class of 2027. I want the work that happens before a company is obvious.</p>
-        <div class="hero__links">
-          <a class="btn btn--solid" href="https://substack.com/@shahanvik" target="_blank" rel="noopener noreferrer">Substack <span aria-hidden="true">↗</span></a>
-          <a class="btn" href="https://www.linkedin.com/in/anvik-shah" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="board">
+        <div class="board-top"><span>Anvik Shah</span><span>Dallas, TX</span></div>
+        <div class="board-message">
+          <p class="kicker">Venture &amp; fintech</p>
+          <h1 id="hero-title">Early-stage<br>by choice</h1>
+          <p class="hero-note">I study finance and economics at UT Dallas. I like digging into startups early, when the numbers are sparse and there are still good questions to ask.</p>
         </div>
+        <div class="hero-actions">
+          <a class="button" href="https://www.linkedin.com/in/anvik-shah">
+            <small>Work and background</small>
+            Find me on LinkedIn
+          </a>
+          <a class="button primary" href="https://substack.com/@shahanvik">
+            <small>Notes on startups and finance</small>
+            Read my Substack
+          </a>
+        </div>
+        <div class="board-bottom"><span>UT Dallas · Class of 2027</span><a href="#work">See my work <span aria-hidden="true">↓</span></a></div>
       </div>
-      <p class="hero__scroll mono">Scroll ↓</p>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="interested" aria-labelledby="interested-heading">
-    <h2 class="label section__label" id="interested-heading">(01) Things I&rsquo;m interested in</h2>
-    <ul class="names">
-      <li>Startups</li>
-      <li>Venture</li>
-      <li>Fintech</li>
-      <li>Market-data tools</li>
-      <li>Early-stage diligence</li>
-      <li>Building from zero</li>
-    </ul>
-  </section>
+    <div class="paper-sections">
+      <section class="section" id="work">
+        <h2 class="section-title">Venture Work</h2>
+        <article class="featured frame">
+          <div class="featured-copy">
+            <p class="kicker">Venture · Austin, TX</p>
+            <h3>Blossom Street Ventures</h3>
+            <p class="role">Spring Research Analyst <span>· Jan-May 2024</span></p>
+            <ul>
+              <li>I built 15+ integrated three-statement forecasting models and cap tables. I ran sensitivity analyses on growth projections for seed and Series A rounds exceeding $1M.</li>
+              <li>I evaluated early-stage SaaS unit economics, including ARR, LTV/CAC, and net revenue retention. My cohort analyses identified a path to a projected 10% cost reduction.</li>
+            </ul>
+          </div>
+          <figure class="portrait frame">
+            <img src="portrait.jpg" alt="Anvik Shah" width="400" height="400" loading="lazy">
+            <figcaption>Anvik Shah · Dallas, TX</figcaption>
+          </figure>
+        </article>
+      </section>
 
-  <section class="section" id="done" aria-labelledby="done-heading">
-    <h2 class="label section__label" id="done-heading">(02) Things I&rsquo;ve done</h2>
-    <ul class="done">
-      <li>Spring Research Analyst, Blossom Street Ventures, Austin, Jan-May 2024</li>
-      <li>Rotational Summer Analyst, FICC and Equities, Goldman Sachs, Dallas, Jun-Aug 2026</li>
-      <li>Investment Analyst, Global Equity, Cantor Fitzgerald, Dallas, May-Aug 2025</li>
-      <li>M&amp;A Business Development Consultant Intern, Sellside Consulting Group, Dallas, Jun-Aug 2024</li>
-      <li>Co-founded Mu-Rho Market Fund, a $50K student-run fund</li>
-      <li>Co-founded Big Brainers, a nonprofit that reached 150+ students</li>
-      <li>
-        <span>Startup Funding Tracker</span>
-        <a href="https://github.com/shahanvik-tech/funding-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://shahanvik-tech.github.io/funding-tracker/" target="_blank" rel="noopener noreferrer">Live ↗</a>
-      </li>
-      <li>
-        <span>Accounting Firm GTM Kit for Kick</span>
-        <a href="https://github.com/shahanvik-tech/kick-gtm-anvik" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://shahanvik-tech.github.io/kick-gtm-anvik/" target="_blank" rel="noopener noreferrer">Live ↗</a>
-      </li>
-      <li>
-        <span>Substack, on the startups changing finance</span>
-        <a href="https://substack.com/@shahanvik" target="_blank" rel="noopener noreferrer">Read ↗</a>
-      </li>
-    </ul>
-  </section>
-
-  <section class="section contact" id="contact" aria-labelledby="contact-heading">
-    <div class="grid contact__head">
-      <h2 class="label contact__label" id="contact-heading">(03) Contact</h2>
-      <p class="contact__lede">Open to venture analyst, associate, platform, and chief of staff roles.</p>
-    </div>
-    <div class="contact__grid">
-      <div>
-        <p class="label">Substack</p>
-        <a class="contact__email" href="https://substack.com/@shahanvik" target="_blank" rel="noopener noreferrer">substack.com/@shahanvik</a>
-        <p class="label phone-label">LinkedIn</p>
-        <a class="contact__phone" href="https://www.linkedin.com/in/anvik-shah" target="_blank" rel="noopener noreferrer">/in/anvik-shah</a>
-        <ul class="contact__links mono">
-          <li><a href="mailto:shahanvik@gmail.com">shahanvik@gmail.com</a></li>
-          <li><a href="tel:+14694276272">469.427.6272</a></li>
-          <li><a data-resume href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing">Resume ↗</a></li>
+      <section class="section" id="interests">
+        <h2 class="section-title">What I’m Interested In</h2>
+        <ul class="interest-grid">
+          <li class="frame">Startups</li>
+          <li class="frame">Venture</li>
+          <li class="frame">Fintech</li>
+          <li class="frame">Early-stage diligence</li>
+          <li class="frame">Market-data tools</li>
+          <li class="frame">Building from zero</li>
         </ul>
+      </section>
+
+      <section class="section" id="other-work">
+        <h2 class="section-title" id="other-work-title">Other Work</h2>
+        <div class="work-table frame">
+          <table aria-labelledby="other-work-title">
+            <thead>
+              <tr><th scope="col">Organization</th><th scope="col">Role or work</th><th scope="col">Dates</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Goldman Sachs <span>Dallas, TX</span></th>
+                <td>Rotational Summer Analyst, FICC and Equities</td><td>Jun-Aug 2026</td>
+              </tr>
+              <tr>
+                <th scope="row">Cantor Fitzgerald <span>Dallas, TX</span></th>
+                <td>Investment Analyst, Global Equity</td><td>May-Aug 2025</td>
+              </tr>
+              <tr>
+                <th scope="row">Sellside Consulting Group <span>Dallas, TX</span></th>
+                <td>M&amp;A Business Development Consultant Intern</td><td>Jun-Aug 2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="founding-grid">
+          <article class="frame text-card"><h3>Mu-Rho Market Fund</h3><p>I co-founded a <strong>$50K</strong> student-run investment fund.</p></article>
+          <article class="frame text-card"><h3>Big Brainers</h3><p>I co-founded a nonprofit that reached <strong>150+ students</strong>.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <article class="frame text-card project">
+            <span class="project-mark gold" aria-hidden="true"></span>
+            <h3>Startup Funding Tracker</h3>
+            <p>I built a tool for following startup funding rounds.</p>
+            <div class="action-row">
+              <a class="button primary" href="https://shahanvik-tech.github.io/funding-tracker/" aria-label="Open the live Startup Funding Tracker">Live site</a>
+              <a class="button" href="https://github.com/shahanvik-tech/funding-tracker" aria-label="Startup Funding Tracker on GitHub">GitHub</a>
+            </div>
+          </article>
+          <article class="frame text-card project">
+            <span class="project-mark denim" aria-hidden="true"></span>
+            <h3>Accounting Firm GTM Kit for Kick</h3>
+            <p>I built this go-to-market kit for Kick to reach accounting firms.</p>
+            <div class="action-row">
+              <a class="button primary" href="https://shahanvik-tech.github.io/kick-gtm-anvik/" aria-label="Open the live Accounting Firm GTM Kit for Kick">Live site</a>
+              <a class="button" href="https://github.com/shahanvik-tech/kick-gtm-anvik" aria-label="Accounting Firm GTM Kit for Kick on GitHub">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="writing">
+        <h2 class="section-title">Writing</h2>
+        <div class="writing frame">
+          <h3>My fintech Substack</h3>
+          <p>I write notes on the startups changing finance. My previous writing on startups and finance generated 31k impressions.</p>
+          <a class="button primary" href="https://substack.com/@shahanvik">Read my Substack</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <h2 class="footer-brand">Anvik <span>Shah</span></h2>
+      <div class="footer-columns">
+        <div class="footer-note">
+          <h3>Get in touch</h3>
+          <p>I’m open to venture analyst, associate, platform, and chief of staff roles.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Explore</h3>
+          <a href="#work">Venture work</a>
+          <a href="#projects">Projects</a>
+          <a href="#writing">Writing</a>
+        </div>
+        <div class="footer-links">
+          <h3>Contact</h3>
+          <a class="button primary" href="mailto:shahanvik@gmail.com" aria-label="Email Anvik Shah at shahanvik@gmail.com">Email</a>
+          <a class="button" href="tel:+14694276272">469.427.6272</a>
+          <a class="button" href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing">Resume</a>
+        </div>
+        <div class="footer-links">
+          <h3>Follow</h3>
+          <a class="button primary" href="https://substack.com/@shahanvik">Substack</a>
+          <a class="button" href="https://www.linkedin.com/in/anvik-shah">LinkedIn</a>
+        </div>
       </div>
-      <form class="contact__form" id="contactForm" novalidate>
-        <div class="field">
-          <label class="label" for="cname">Your name</label>
-          <input id="cname" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label class="label" for="cemail">Your email</label>
-          <input id="cemail" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div class="field field--full">
-          <label class="label" for="cmsg">Message</label>
-          <textarea id="cmsg" name="message" rows="5" required></textarea>
-        </div>
-        <div class="contact__actions">
-          <button class="btn btn--solid" type="submit">Send message</button>
-          <button class="btn" type="button" data-copy>Copy email</button>
-        </div>
-        <p class="contact__status mono" id="formMsg" role="status" aria-live="polite"></p>
-      </form>
+      <p class="based">Based in Dallas, TX.</p>
+      <p class="copyright">© 2026 Anvik Shah</p>
     </div>
-  </section>
-
-</main>
-
-<footer class="footer section--ink">
-  <div class="grid footer__top">
-    <div class="footer__col">
-      <h2 class="footer__heading">Elsewhere</h2>
-      <ul class="footer__links mono">
-        <li><a href="https://substack.com/@shahanvik" target="_blank" rel="noopener noreferrer">Substack ↗</a></li>
-        <li><a href="https://www.linkedin.com/in/anvik-shah" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
-        <li><a href="mailto:shahanvik@gmail.com">Email ↗</a></li>
-        <li><a href="tel:+14694276272">469.427.6272</a></li>
-        <li><a data-resume href="https://drive.google.com/file/d/1xPwN5AX4sBWURYKETI1RfvD55fQ0-ppi/view?usp=sharing">Resume ↗</a></li>
-      </ul>
-    </div>
-    <div class="footer__col footer__col--right">
-      <h2 class="footer__heading">Based in</h2>
-      <p class="footer__body">Dallas, TX.</p>
-    </div>
-  </div>
-  <div class="grid footer__credits mono">
-    <p>© 2026 Anvik Shah · Dallas, TX</p>
-    <p><a href="#top">Back to top ↑</a></p>
-  </div>
-  <p class="footer__mark" aria-hidden="true">AS</p>
-</footer>
-
-<script src="main.js"></script>
+  </footer>
 </body>
 </html>
