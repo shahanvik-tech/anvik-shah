@@ -252,10 +252,14 @@ h1 {
 }
 
 .featured h3 { margin-top: 8px; font-size: clamp(24px, 3.4vw, 44px); line-height: 1.15; }
+.featured h3 a, .kicker a { color: inherit; text-decoration: none; }
+.featured h3 a:hover, .kicker a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
 .role { margin-top: 14px; font-weight: 700; }
 .role span { color: var(--muted); font-weight: 400; }
-.featured ul { display: grid; gap: 12px; margin: 22px 0 0; padding-left: 22px; color: var(--muted); }
-.featured li::marker { color: var(--rust); }
+.featured-copy > p:not(.kicker):not(.role) { margin-top: 18px; color: var(--muted); max-width: 52ch; }
+.featured ul, .text-card ul { display: grid; gap: 12px; margin: 16px 0 0; padding-left: 22px; color: var(--muted); }
+.featured ul { margin-top: 22px; }
+.featured li::marker, .text-card li::marker { color: var(--rust); }
 .portrait { width: 100%; max-width: 238px; justify-self: center; padding: 8px; background: var(--panel); }
 .portrait img { display: block; width: 100%; height: auto; border: 1px solid var(--ink); }
 .portrait figcaption { margin-top: 8px; color: var(--muted); font-size: 11px; text-transform: uppercase; }
