@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Anvik Shah">
+  <!-- Paper-and-ink monogram: JetBrains Mono ExtraBold A, rust inset. -->
+  <path fill="#10100d" d="M3,0H29A3,3 0 0 1 32,3V29A3,3 0 0 1 29,32H3A3,3 0 0 1 0,29V3A3,3 0 0 1 3,0Z"/>
+  <path fill="#b9482e" d="M28,2H30V29A1,1 0 0 1 29,30H2V28H28Z"/>
+  <path fill="#f5efe0" transform="translate(16,15.6) scale(0.03287671,-0.03287671) translate(-300,-365)" d="M25 0 204 730H394L575 0H422L387 165H213L178 0ZM238 285H361L326 461Q319 499 311.5 536.5Q304 574 300 595Q296 574 289.5 537.0Q283 500 275 462Z"/>
+</svg>
